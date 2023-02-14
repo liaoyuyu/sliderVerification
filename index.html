@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,maximum-scale=1,user-scalable=no" name="viewport" />
+    <title>滑块验证</title>
+    <style>
+        /* 无关样式 */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 40px;
+            position: relative;
+        }
+
+        button {
+            margin: 20px auto 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+
+    </div>
+    <button onclick="boxRe()">重置</button>
+</body>
+
+</html>
+
+
+<script src="./js/sliderVerif.js"></script>
+
+<script>
+    var box = new sliderVerif("#box", {
+        sliderText: "请按住滑块拖动",// 滑块提示文字
+        succText: "验证通过",// 滑块完成提示文字
+        sliderTextColor: "#666",//滑块提示文字颜色
+        succTextColor: "#fff",//滑块完成提示文字颜色
+        fontSize: 1,//字体大小  数字/字符串 字符串可以带单位 ，数字默认单位 em
+
+        /**
+         * 盒子 样式
+         */
+        boxStyle: {
+            bg: "#e5e5e5",//背景颜色  颜色名称，RGB,RGBA,16进制
+            barBg: "#5abc3c",// 进度条 背景颜色   颜色名称，RGB,RGBA,16进制
+            radius: 0,//按钮圆角   数字/字符串  字符串可以带单位，同 border-radius
+            borderWidth: 0,//边框宽度  数字/字符串 字符串可以带单位
+            borderColor: "#333",//边框颜色  颜色名称，RGB,RGBA,16进制
+            borderStyle: "solid",//边框样式   同 css border-style 属性值
+        },
+        /**
+         * 按钮 样式
+         */
+        btnStyle: {
+            color: "#333",// 按钮 图标颜色   颜色名称，RGB,RGBA,16进制
+            succColor: "#5abc3c",//滑动完成 图标颜色    颜色名称，RGB,RGBA,16进制
+            bg: "#fff",//按钮背景颜色    颜色名称，RGB,RGBA,16进制
+            succBg: "#fff",//滑动完成 背景颜色    颜色名称，RGB,RGBA,16进制
+            radius: null,//按钮圆角   数字/字符串  字符串可以带单位，同 border-radius，不是数字和字符串，使用 boxStyle.radius
+            borderWidth: 1,//边框宽度  数字/字符串 字符串可以带单位
+            borderColor: "#e5e5e5",//边框颜色   颜色名称，RGB,RGBA,16进制
+            borderStyle: "solid",//边框样式   同 css border-style 属性值
+        },
+        // 是否监听屏幕变化，自动修改响应式样式
+        isResizeAutoStyle: false,
+        //返回状态方法
+        getCompleteState: (res) => {
+            console.log(res);
+        },
+    });
+
+    function boxRe() {
+        box.reset();
+    }
+</script>
