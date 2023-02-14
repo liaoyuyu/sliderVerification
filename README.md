@@ -2,10 +2,10 @@
 
 ### 1、介绍
 pc 移动端 -js 滑块验证 自适应插件； 自适应自动跳转样式，修改样式，圆角，边框，背景，颜色等
-<!-- github 地址: [blog.gitee.com](https://blog.gitee.com)  -->
+
 <br/>
 
-<!-- 插件地址: [https://www.jq22.com/jquery-info24398](https://www.jq22.com/jquery-info24398)  -->
+插件地址: [https://gitee.com/TGODS/sliderVerif](https://gitee.com/TGODS/sliderVerif) 
 
 <br/>
 
@@ -104,7 +104,7 @@ getCompleteState | 滑动完成返回方法 | function | function | 滑动完成
 
 
 
-### 3、可用方法
+### 4、可用方法
 
 1. 重置方法 ： `reset()`
 2. 更新样式方法 ： `upStyle()` ，屏幕变化，会导致px样式无法完美还原样式，需要 这方法，重新设置px
