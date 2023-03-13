@@ -1,4 +1,10 @@
-# pc 移动端 -js 滑块验证 自适应插件(不支持IE)
+# pc 移动端 -js 滑块验证 自适应插件(支持 vue引入使用)(不支持IE)
+
+
+### 更新：
+> 2023.3.13： 1、优化传入this错误；2、_slider_bar 没有响应式修改样式；3、新增vue引入方式
+
+<br/>
 
 ### 1、介绍
 pc 移动端 -js 滑块验证 自适应插件； 自适应自动跳转样式，修改样式，圆角，边框，背景，颜色等
@@ -13,7 +19,9 @@ pc 移动端 -js 滑块验证 自适应插件； 自适应自动跳转样式，�
 ### 2、使用说明
 <br/>
 
->引入： `<script src="./js/sliderVerif.js"></script>`
+>普通引入： `<script src="./js/sliderVerif.js"></script>`
+
+> vue 引入：`import sliderVerif from '../assets/js/sliderVerif`
 
 
 <br/>

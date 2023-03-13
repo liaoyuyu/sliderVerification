@@ -57,6 +57,7 @@
         this._slider_bar = null;
         // 塞入位置的父级元素
         this.insertEle = document.querySelector(insertEleStr);
+        if (!this.insertEle) throw '获取 insertEleStr：插入对象 失败'
         // 初始化
         this.init();
 
@@ -441,10 +442,11 @@
             // 获取 父级 高宽
             var insertEleStrW = this.insertEle.clientWidth;
             var insertEleStrH = this.insertEle.clientHeight;
-            console.log(insertEleStrW, insertEleStrH);
             // 只需要更新 的 css变量
             this._slider_verif_.style.setProperty("--slider_verif_wid", insertEleStrW + 'px');
             this._slider_verif_.style.setProperty("--slider_verif_hei", insertEleStrH + 'px');
+            // 进度
+            this._slider_bar.style.width = '100%';
         },
     };
 
@@ -464,5 +466,8 @@
         sliderVerif.upStyle();
     };
 
+    // import 抛出
+    if (typeof module !== 'undefined' && module.exports) module.exports = sliderVerifFunc;
+    // window 抛出
     win.sliderVerif = sliderVerifFunc;
-})(this);
+})(window);
